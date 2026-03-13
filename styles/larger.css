@@ -1,0 +1,99 @@
+/* ===== Larger screens (641px and up) ===== */
+@media (min-width: 641px) {
+
+    header {
+        padding: 0.85rem 2.5rem;
+    }
+
+    /* Hide hamburger, show nav inline */
+    #menu-btn { display: none; }
+
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        background: transparent;
+        align-items: center;
+        gap: 0.25rem;
+        position: static;
+        width: auto;
+        box-shadow: none;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+        background: rgba(56, 189, 248, 0.15);
+        color: var(--accent);
+        padding-left: 1rem;
+    }
+
+    nav a.active {
+        border-left: none;
+        border-bottom: 2px solid var(--accent);
+        border-radius: 0;
+    }
+
+    /* Main layout */
+    main {
+        padding: 2.5rem 2rem;
+    }
+
+    main h1 {
+        font-size: 2.6rem;
+    }
+
+    /* Three column section layout */
+    .sections-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .sections-grid .wide {
+        grid-column: 1 / -1;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.35rem;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 2.5rem 3rem;
+        text-align: left;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .social-links { justify-content: flex-start; }
+}
+
+/* ===== Wide screens (1024px and up) ===== */
+@media (min-width: 1024px) {
+    main {
+        padding: 3rem 2.5rem;
+    }
+
+    .sections-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .sections-grid .wide {
+        grid-column: 1 / -1;
+    }
+
+    nav a { font-size: 0.95rem; }
+}
