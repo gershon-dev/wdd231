@@ -177,11 +177,21 @@ main h1::after {
     margin-top: 0.3rem;
 }
 
+/* ===== Sections Grid (mobile: single column grid) ===== */
+.sections-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.sections-grid .wide {
+    grid-column: 1 / -1;
+}
+
 section {
     background: var(--card-bg);
     border-radius: var(--radius);
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
 }
