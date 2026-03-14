@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="20" fill="#0a2010"/>
+  <!-- Leaf / plant -->
+  <path d="M100 155 Q60 120 65 70 Q100 85 100 155Z" fill="#2ecc71"/>
+  <path d="M100 155 Q140 120 135 70 Q100 85 100 155Z" fill="#27ae60"/>
+  <!-- Center vein -->
+  <line x1="100" y1="155" x2="100" y2="75" stroke="#0a2010" stroke-width="2"/>
+  <!-- Leaf veins left -->
+  <line x1="100" y1="110" x2="75" y2="95" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="125" x2="72" y2="113" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="140" x2="78" y2="132" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <!-- Leaf veins right -->
+  <line x1="100" y1="110" x2="125" y2="95" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="125" x2="128" y2="113" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <line x1="100" y1="140" x2="122" y2="132" stroke="#0a2010" stroke-width="1.2" opacity="0.6"/>
+  <!-- Circuit/tech dots overlaid -->
+  <circle cx="80" cy="95" r="4" fill="#f0c040"/>
+  <circle cx="120" cy="95" r="4" fill="#f0c040"/>
+  <circle cx="75" cy="115" r="3" fill="#f0c040" opacity="0.7"/>
+  <circle cx="125" cy="115" r="3" fill="#f0c040" opacity="0.7"/>
+  <!-- Stalk -->
+  <line x1="100" y1="155" x2="100" y2="172" stroke="#2ecc71" stroke-width="4" stroke-linecap="round"/>
+  <!-- Soil line -->
+  <rect x="55" y="172" width="90" height="6" rx="3" fill="#6b4226"/>
+  <text x="100" y="194" font-family="Arial" font-size="10" font-weight="bold" fill="#2ecc71" text-anchor="middle">ASHANTI AGRITECH</text>
+</svg>

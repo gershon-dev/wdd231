@@ -1,0 +1,76 @@
+{
+  "members": [
+    {
+      "name": "Accra Tech Hub",
+      "address": "14 Independence Ave, Accra, Ghana",
+      "phone": "+233 30 277 4321",
+      "website": "https://accratechhub.gh",
+      "image": "accra-tech-hub.svg",
+      "membership": 3,
+      "description": "Ghana's leading technology incubator supporting startups and digital innovation."
+    },
+    {
+      "name": "Gold Coast Logistics",
+      "address": "7 Tema Motorway, Tema, Ghana",
+      "phone": "+233 30 220 5510",
+      "website": "https://goldcoastlogistics.gh",
+      "image": "gold-coast-logistics.svg",
+      "membership": 3,
+      "description": "Premier freight and supply chain solutions across West Africa since 2005."
+    },
+    {
+      "name": "Kente Digital Agency",
+      "address": "22 Osu Oxford Street, Accra, Ghana",
+      "phone": "+233 30 278 9900",
+      "website": "https://kentedigital.gh",
+      "image": "kente-digital.svg",
+      "membership": 2,
+      "description": "Award-winning creative and digital marketing agency rooted in African culture."
+    },
+    {
+      "name": "Baobab Financial Services",
+      "address": "5 Ring Road Central, Accra, Ghana",
+      "phone": "+233 30 266 1120",
+      "website": "https://baobabfinance.gh",
+      "image": "baobab-finance.svg",
+      "membership": 3,
+      "description": "Microfinance and investment services empowering entrepreneurs across Ghana."
+    },
+    {
+      "name": "Savannah Solar Energy",
+      "address": "88 Liberation Road, Accra, Ghana",
+      "phone": "+233 30 254 3380",
+      "website": "https://savannahsolar.gh",
+      "image": "savannah-solar.svg",
+      "membership": 2,
+      "description": "Renewable energy provider delivering solar solutions to homes and businesses."
+    },
+    {
+      "name": "Abena's Catering & Events",
+      "address": "31 Labone Street, Accra, Ghana",
+      "phone": "+233 24 456 7788",
+      "website": "https://abenascatering.gh",
+      "image": "abenas-catering.svg",
+      "membership": 1,
+      "description": "Traditional Ghanaian cuisine and full-service event planning for all occasions."
+    },
+    {
+      "name": "Nimba Construction Group",
+      "address": "16 Airport Bypass Road, Accra, Ghana",
+      "phone": "+233 30 288 4400",
+      "website": "https://nimbaconstruction.gh",
+      "image": "nimba-construction.svg",
+      "membership": 2,
+      "description": "Reliable civil and commercial construction services across Ghana and beyond."
+    },
+    {
+      "name": "Ashanti Agritech",
+      "address": "3 Kumasi Central Market Road, Kumasi, Ghana",
+      "phone": "+233 32 209 6644",
+      "website": "https://ashantiagritech.gh",
+      "image": "ashanti-agritech.svg",
+      "membership": 1,
+      "description": "Technology-driven agricultural solutions improving yields for smallholder farmers."
+    }
+  ]
+}

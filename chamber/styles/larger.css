@@ -1,0 +1,101 @@
+/* =========================================================
+   Chamber of Commerce — larger.css  (641px and above)
+   ========================================================= */
+
+@media (min-width: 641px) {
+
+  header {
+    padding: 0.85rem 2.5rem;
+    flex-wrap: nowrap;
+  }
+
+  #menu-btn { display: none; }
+
+  nav,
+  nav.open {
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    align-items: center;
+    gap: 0.2rem;
+    position: static;
+    width: auto;
+    box-shadow: none;
+  }
+
+  nav a {
+    padding: 0.45rem 0.9rem;
+    border-bottom: none;
+    border-left: 0;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  nav a:hover, nav a.active {
+    padding-left: 0.9rem;
+    background: rgba(200,150,12,0.18);
+  }
+
+  nav a.active {
+    border-bottom: 2px solid var(--gold);
+    border-radius: 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 3.5rem 2.5rem 3rem;
+    text-align: left;
+  }
+
+  .hero h1 { font-size: 2.6rem; }
+  .hero p  { margin: 0; font-size: 0.95rem; }
+
+  /* Main */
+  main {
+    padding: 2.5rem 2rem 3.5rem;
+  }
+
+  /* Grid view — 2 columns on tablet */
+  #member-display.grid-view {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.5rem 3rem;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .social-links { justify-content: flex-start; }
+}
+
+/* =========================================================
+   Wide screens (1024px and above)
+   ========================================================= */
+@media (min-width: 1024px) {
+
+  header { padding: 1rem 3.5rem; }
+
+  .hero {
+    padding: 4rem 3.5rem 3.5rem;
+  }
+
+  .hero h1 { font-size: 3rem; }
+
+  main { padding: 3rem 3.5rem 4rem; }
+
+  /* Grid view — 3 columns on desktop */
+  #member-display.grid-view {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  nav a { font-size: 0.9rem; }
+}

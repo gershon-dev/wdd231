@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="20" fill="#0d2137"/>
+  <!-- Baobab tree silhouette -->
+  <!-- Trunk -->
+  <rect x="88" y="100" width="24" height="65" rx="5" fill="#c8960c"/>
+  <!-- Wide canopy (baobab style - fat top) -->
+  <ellipse cx="100" cy="80" rx="65" ry="45" fill="#c8960c"/>
+  <ellipse cx="100" cy="72" rx="55" ry="38" fill="#1a5c2a"/>
+  <!-- Roots spreading out -->
+  <path d="M88 165 Q70 175 50 172" stroke="#c8960c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M112 165 Q130 175 150 172" stroke="#c8960c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M100 165 Q100 178 100 182" stroke="#c8960c" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Currency symbol in canopy -->
+  <text x="100" y="90" font-family="Arial" font-size="32" font-weight="bold" fill="#f0c040" text-anchor="middle">₵</text>
+  <text x="100" y="195" font-family="Arial" font-size="9" font-weight="bold" fill="#c8960c" text-anchor="middle">BAOBAB FINANCIAL</text>
+</svg>

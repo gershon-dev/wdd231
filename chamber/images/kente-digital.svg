@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="20" fill="#1a0a2e"/>
+  <!-- Kente pattern strips -->
+  <rect x="0" y="40" width="200" height="15" fill="#e63946" opacity="0.8"/>
+  <rect x="0" y="55" width="200" height="8" fill="#f0c040"/>
+  <rect x="0" y="63" width="200" height="15" fill="#2ecc71" opacity="0.8"/>
+  <rect x="0" y="78" width="200" height="8" fill="#f0c040"/>
+  <rect x="0" y="86" width="200" height="15" fill="#e63946" opacity="0.8"/>
+  <rect x="0" y="101" width="200" height="8" fill="#f0c040"/>
+  <rect x="0" y="109" width="200" height="15" fill="#2ecc71" opacity="0.8"/>
+  <!-- Overlay dark band with KD -->
+  <rect x="40" y="30" width="120" height="110" rx="8" fill="#1a0a2e" opacity="0.85"/>
+  <!-- K letter stylized -->
+  <text x="100" y="110" font-family="Arial Black" font-size="60" font-weight="900" fill="#f0c040" text-anchor="middle">K</text>
+  <!-- Dot accent -->
+  <circle cx="130" cy="65" r="8" fill="#e63946"/>
+  <text x="100" y="175" font-family="Arial" font-size="10" font-weight="bold" fill="#f0c040" text-anchor="middle">KENTE DIGITAL AGENCY</text>
+</svg>

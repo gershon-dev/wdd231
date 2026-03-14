@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="20" fill="#3d0c02"/>
+  <!-- Serving dome/cloche -->
+  <ellipse cx="100" cy="115" rx="70" ry="12" fill="#c8960c"/>
+  <path d="M30 115 Q30 60 100 55 Q170 60 170 115 Z" fill="#e8a020"/>
+  <!-- Handle -->
+  <ellipse cx="100" cy="55" rx="12" ry="7" fill="#c8960c"/>
+  <rect x="94" y="48" width="12" height="14" rx="3" fill="#c8960c"/>
+  <!-- Fork -->
+  <line x1="45" y1="75" x2="45" y2="148" stroke="#f0c040" stroke-width="3" stroke-linecap="round"/>
+  <line x1="38" y1="75" x2="38" y2="95" stroke="#f0c040" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="52" y1="75" x2="52" y2="95" stroke="#f0c040" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Knife -->
+  <line x1="158" y1="75" x2="158" y2="148" stroke="#f0c040" stroke-width="3" stroke-linecap="round"/>
+  <path d="M158 75 Q168 90 158 105" fill="#f0c040"/>
+  <!-- Stars -->
+  <text x="75" y="105" font-size="14" fill="#3d0c02">★</text>
+  <text x="95" y="100" font-size="14" fill="#3d0c02">★</text>
+  <text x="115" y="105" font-size="14" fill="#3d0c02">★</text>
+  <text x="100" y="170" font-family="Arial" font-size="13" font-weight="bold" fill="#f0c040" text-anchor="middle">ABENA'S</text>
+  <text x="100" y="186" font-family="Arial" font-size="10" fill="#e8a020" text-anchor="middle">CATERING &amp; EVENTS</text>
+</svg>
