@@ -1,4 +1,21 @@
 /* =========================================================
+   CSS Reset (replaces normalize.css)
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { line-height: 1.15; -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+main { display: block; }
+h1 { font-size: 2em; margin: 0.67em 0; }
+img, svg { border-style: none; max-width: 100%; display: block; }
+button, input, optgroup, select, textarea {
+  font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0;
+}
+button, input { overflow: visible; }
+button, select { text-transform: none; }
+a { background-color: transparent; }
+[hidden] { display: none; }
+
+/* =========================================================
    Chamber of Commerce — small.css  (mobile-first, 320px+)
    ========================================================= */
 
@@ -36,7 +53,6 @@ body {
   flex-direction: column;
   font-size: 1rem;
   line-height: 1.65;
-  overflow-x: hidden;
 }
 
 img { max-width: 100%; display: block; }
@@ -202,6 +218,7 @@ nav a.active { border-left: 3px solid var(--gold); }
     rgba(200,150,12,0.03) 30px,
     rgba(200,150,12,0.03) 31px
   );
+  pointer-events: none;
 }
 
 .hero h1 {
