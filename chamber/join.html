@@ -14,8 +14,10 @@
 
   <meta property="og:title"       content="Join | Accra Chamber of Commerce">
   <meta property="og:description" content="Join the Accra Chamber of Commerce and grow your business across Ghana.">
-  <meta property="og:image"       content="https://gershonarthur.github.io/wdd231/chamber/images/og-image.svg">
+  <meta property="og:image"       content="https://gershonarthur.github.io/wdd231/chamber/og-image.webp">
   <meta property="og:url"         content="https://gershonarthur.github.io/wdd231/chamber/join.html">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="Accra Chamber of Commerce">
 
@@ -162,7 +164,7 @@
       <div class="card-grid">
 
         <!-- NP Card -->
-        <div class="mem-card mem-card--np" style="animation-delay:0.1s">
+        <div class="mem-card mem-card--np">
           <div class="mem-card__badge">FREE</div>
           <h3 class="mem-card__name">NP Membership</h3>
           <p class="mem-card__tagline">For non-profit organizations</p>
@@ -173,7 +175,7 @@
         </div>
 
         <!-- Bronze Card -->
-        <div class="mem-card mem-card--bronze" style="animation-delay:0.25s">
+        <div class="mem-card mem-card--bronze">
           <div class="mem-card__badge">BRONZE</div>
           <h3 class="mem-card__name">Bronze Membership</h3>
           <p class="mem-card__tagline">Get started with the Chamber</p>
@@ -184,7 +186,7 @@
         </div>
 
         <!-- Silver Card -->
-        <div class="mem-card mem-card--silver" style="animation-delay:0.4s">
+        <div class="mem-card mem-card--silver">
           <div class="mem-card__badge">SILVER</div>
           <h3 class="mem-card__name">Silver Membership</h3>
           <p class="mem-card__tagline">Grow your visibility</p>
@@ -195,7 +197,7 @@
         </div>
 
         <!-- Gold Card -->
-        <div class="mem-card mem-card--gold" style="animation-delay:0.55s">
+        <div class="mem-card mem-card--gold">
           <div class="mem-card__badge">★ GOLD</div>
           <h3 class="mem-card__name">Gold Membership</h3>
           <p class="mem-card__tagline">Maximum exposure &amp; influence</p>
@@ -227,7 +229,7 @@
         <li>✅ Certificate of Chamber membership</li>
       </ul>
       <p class="modal-note">Exclusively for registered non-profit organisations. Proof of non-profit status required.</p>
-      <button class="modal-cta" onclick="document.getElementById('modal-np').close()">Select NP Membership</button>
+      <button class="modal-cta" data-close="modal-np">Select NP Membership</button>
     </div>
   </dialog>
 
@@ -247,7 +249,7 @@
         <li>✅ Monthly business digest newsletter</li>
       </ul>
       <p class="modal-note">Annual fee: GHS 500. Renewable each year.</p>
-      <button class="modal-cta" onclick="document.getElementById('modal-bronze').close()">Select Bronze Membership</button>
+      <button class="modal-cta" data-close="modal-bronze">Select Bronze Membership</button>
     </div>
   </dialog>
 
@@ -268,7 +270,7 @@
         <li>✅ Social media mentions and Chamber blog features</li>
       </ul>
       <p class="modal-note">Annual fee: GHS 1,200. Renewable each year.</p>
-      <button class="modal-cta" onclick="document.getElementById('modal-silver').close()">Select Silver Membership</button>
+      <button class="modal-cta" data-close="modal-silver">Select Silver Membership</button>
     </div>
   </dialog>
 
@@ -290,7 +292,7 @@
         <li>⭐ Annual recognition award eligibility</li>
       </ul>
       <p class="modal-note">Annual fee: GHS 2,500. Includes priority renewal.</p>
-      <button class="modal-cta" onclick="document.getElementById('modal-gold').close()">Select Gold Membership</button>
+      <button class="modal-cta" data-close="modal-gold">Select Gold Membership</button>
     </div>
   </dialog>
 
@@ -300,7 +302,7 @@
       <h2>Accra Chamber of Commerce</h2>
       <p>📍 Liberia Road, Accra, Ghana</p>
       <p>📞 <a href="tel:+233302662935">+233 30 266 2935</a></p>
-      <p>✉️ <a href="mailto:info@accrachamber.gh">info@accrachamber.gh</a></p>
+      <p>✉️ <a href="/cdn-cgi/l/email-protection#d6bfb8b0b996b7b5b5a4b7b5beb7bbb4b3a4f8b1be"><span class="__cf_email__" data-cfemail="c6afa8a0a986a7a5a5b4a7a5aea7aba4a3b4e8a1ae">[email&#160;protected]</span></a></p>
     </div>
     <div class="social-links" role="navigation" aria-label="Social media links">
       <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -315,10 +317,4 @@
     </div>
     <div class="footer-dev">
       <p><strong>Gershon Arthur</strong> &bull; WDD 231</p>
-      <p id="last-modified"></p>
-      <p>© <span id="current-year"></span> Accra Chamber of Commerce</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+      <p i
