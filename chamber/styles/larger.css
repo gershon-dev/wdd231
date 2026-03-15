@@ -42,7 +42,7 @@
     border-radius: 0;
   }
 
-  /* Hero */
+  /* Directory hero banner */
   .hero {
     padding: 3.5rem 2.5rem 3rem;
     text-align: left;
@@ -51,8 +51,8 @@
   .hero h1 { font-size: 2.6rem; }
   .hero p  { margin: 0; font-size: 0.95rem; }
 
-  /* Main */
-  main {
+  /* Content wrapper (replaces old main padding) */
+  .content-wrap {
     padding: 2.5rem 2rem 3.5rem;
   }
 
@@ -74,6 +74,29 @@
   }
 
   .social-links { justify-content: flex-start; }
+
+  /* ── Home Hero ── */
+  .home-hero {
+    min-height: 80vh;
+    padding: 5rem 2.5rem 5rem;
+  }
+
+  .home-hero__title { font-size: 3.2rem; }
+  .home-hero__sub   { font-size: 1rem; }
+
+  /* ── Home Grid (weather + events) ── */
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  /* ── Spotlights ── */
+  .spotlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
 }
 
 /* =========================================================
@@ -89,7 +112,7 @@
 
   .hero h1 { font-size: 3rem; }
 
-  main { padding: 3rem 3.5rem 4rem; }
+  .content-wrap { padding: 3rem 3.5rem 4rem; }
 
   /* Grid view — 3 columns on desktop */
   #member-display.grid-view {
@@ -98,4 +121,24 @@
   }
 
   nav a { font-size: 0.9rem; }
+
+  /* ── Home Hero ── */
+  .home-hero {
+    min-height: 85vh;
+    padding: 6rem 3.5rem 6rem;
+  }
+
+  .home-hero__title { font-size: 4rem; }
+
+  /* ── Home Grid ── */
+  .home-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+  }
+
+  /* ── Spotlights ── */
+  .spotlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
 }
