@@ -216,7 +216,7 @@ nav a.active { border-left: 3px solid var(--gold); }
     rgba(200,150,12,0.03) 30px,
     rgba(200,150,12,0.03) 31px
   );
-  pointer-events: none;
+ 
 }
 
 .hero h1 {
