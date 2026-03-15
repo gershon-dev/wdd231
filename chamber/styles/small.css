@@ -219,7 +219,6 @@ nav a.active { border-left: 3px solid var(--gold); }
     rgba(200,150,12,0.03) 30px,
     rgba(200,150,12,0.03) 31px
   );
-  pointer-events: none;
 }
 
 .hero h1 {
@@ -527,7 +526,6 @@ footer {
   top: -30%; left: -15%;
   width: 80%; height: 160%;
   background: radial-gradient(ellipse at center, rgba(200,150,12,0.2) 0%, transparent 65%);
-  pointer-events: none;
   z-index: 0;
 }
 
@@ -545,7 +543,6 @@ footer {
       rgba(200,150,12,0.045) 29px
     ),
     linear-gradient(to top, var(--gold) 0px, var(--gold) 3px, transparent 3px);
-  pointer-events: none;
   z-index: 0;
 }
 

@@ -30,6 +30,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- ── CSS ────────────────────────────────────────── -->
+  <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
@@ -69,10 +70,7 @@
     </nav>
   </header>
 
-  <!-- ===== MAIN ===== -->
-  <main id="main-content">
-
-  <!-- ── Hero ─────────────────────────────────────────── -->
+  <!-- ===== HERO ===== -->
   <section class="home-hero" aria-label="Welcome banner">
     <div class="home-hero__content">
       <p class="home-hero__eyebrow">Est. 1961 · Accra, Ghana</p>
@@ -83,10 +81,11 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
+    <div class="home-hero__overlay" aria-hidden="true"></div>
   </section>
 
-  <!-- ── Content ───────────────────────────────────────── -->
-  <div class="content-wrap">
+  <!-- ===== MAIN ===== -->
+  <main id="main-content">
 
     <!-- ── Home Grid ──────────────────────────────────── -->
     <div class="home-grid">
@@ -100,7 +99,7 @@
         <div id="weather-current" class="weather-now">
           <p class="weather-loading" role="status">Loading weather…</p>
         </div>
-        <div id="weather-forecast" class="weather-forecast" aria-label="3-day forecast"></div>
+        <div id="weather-forecast" class="weather-forecast" role="region" aria-label="3-day forecast"></div>
       </section>
 
       <!-- Events Card -->
@@ -159,8 +158,6 @@
       </div>
     </section>
 
-  </div><!-- /.content-wrap -->
-
   </main>
 
   <!-- ===== FOOTER ===== -->
@@ -170,7 +167,7 @@
       <h2>Accra Chamber of Commerce</h2>
       <p>📍 Liberia Road, Accra, Ghana</p>
       <p>📞 <a href="tel:+233302662935">+233 30 266 2935</a></p>
-      <p>✉️ <a href="/cdn-cgi/l/email-protection#f79e999198b79694948596949f969a959285d9909f"><span class="__cf_email__" data-cfemail="0c65626a634c6d6f6f7e6d6f646d616e697e226b64">[email&#160;protected]</span></a></p>
+      <p>✉️ <a href="/cdn-cgi/l/email-protection#31585f575e7150525243505259505c5354431f5659"><span class="__cf_email__" data-cfemail="d1b8bfb7be91b0b2b2a3b0b2b9b0bcb3b4a3ffb6b9">[email&#160;protected]</span></a></p>
     </div>
 
     <div class="social-links" role="navigation" aria-label="Social media links">
@@ -193,4 +190,10 @@
 
     <div class="footer-dev">
       <p><strong>Gershon Arthur</strong> &bull; WDD 231</p>
-      <p i
+      <p id="last-modified"></p>
+      <p>© <span id="current-year"></span> Accra Chamber of Commerce</p>
+    </div>
+
+  </footer>
+</body>
+</html>
