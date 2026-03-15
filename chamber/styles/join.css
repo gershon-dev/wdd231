@@ -1,0 +1,560 @@
+/* =========================================================
+   join.css — Join & Thank You page styles
+   ========================================================= */
+
+/* ── Join Hero ─────────────────────────────────────────── */
+.join-hero {
+  background: linear-gradient(135deg, #1a1200 0%, #2d1f00 60%, #0d0d0d 100%);
+  color: #fff;
+  padding: 2.5rem 1.25rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 30px,
+    rgba(200,150,12,0.04) 30px, rgba(200,150,12,0.04) 31px
+  );
+}
+
+.join-hero h1 {
+  font-family: var(--font-head);
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: var(--gold-light);
+  position: relative;
+}
+
+.join-hero p {
+  font-size: 0.9rem;
+  color: #bbb;
+  max-width: 520px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ── Join Main Layout ──────────────────────────────────── */
+.join-main {
+  flex: 1;
+  padding: 1.75rem 1rem 3rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Form Section ──────────────────────────────────────── */
+.form-section {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 2rem 1.5rem;
+}
+
+.form-section__title {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 1.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-section__title::before {
+  content: '✍️';
+  font-size: 1.1rem;
+}
+
+/* ── Form Fields ───────────────────────────────────────── */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-field:last-of-type { margin-bottom: 0; }
+
+.field-label {
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.required {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--parchment);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(200,150,12,0.15);
+}
+
+.form-field input:invalid:not(:placeholder-shown),
+.form-field select:invalid:not(:focus) {
+  border-color: #b91c1c;
+}
+
+.form-field input:valid:not(:placeholder-shown) {
+  border-color: #16a34a;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+
+
+/* ── Submit Button ─────────────────────────────────────── */
+.form-submit {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.submit-btn {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(200,150,12,0.3);
+}
+
+.submit-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200,150,12,0.4);
+}
+
+.submit-btn:active { transform: translateY(0); }
+
+/* ── Membership Cards ──────────────────────────────────── */
+.membership-cards {
+  padding: 0;
+}
+
+.membership-cards__title {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Individual Membership Card ────────────────────────── */
+.mem-card {
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem 1rem;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  /* Entry animation */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: cardReveal 0.5s ease forwards;
+}
+
+@keyframes cardReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mem-card__badge {
+  font-family: var(--font-head);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 0.25rem;
+}
+
+.mem-card__name {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.mem-card__tagline {
+  font-size: 0.75rem;
+  color: inherit;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.mem-card__price {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.mem-card__link {
+  font-family: var(--font-head);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 2px solid currentColor;
+  background: transparent;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: inherit;
+  margin-top: auto;
+  width: fit-content;
+}
+
+.mem-card__link:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+/* NP */
+.mem-card--np {
+  background: #f0f4f8;
+  border-color: #cbd5e0;
+  color: #2d3748;
+}
+.mem-card--np .mem-card__badge { background: #e2e8f0; color: #4a5568; }
+
+/* Bronze */
+.mem-card--bronze {
+  background: linear-gradient(135deg, #2d1a0a 0%, #3d2510 100%);
+  border-color: #8b4513;
+  color: #f5deb3;
+}
+.mem-card--bronze .mem-card__badge { background: #8b4513; color: #fff; }
+
+/* Silver */
+.mem-card--silver {
+  background: linear-gradient(135deg, #1a2030 0%, #2a3045 100%);
+  border-color: #7b8fa1;
+  color: #cbd5e0;
+}
+.mem-card--silver .mem-card__badge { background: #4a6075; color: #fff; }
+
+/* Gold */
+.mem-card--gold {
+  background: linear-gradient(135deg, #1a1200 0%, #2d1f00 100%);
+  border-color: var(--gold);
+  color: var(--gold-light);
+  box-shadow: 0 4px 20px rgba(200,150,12,0.2);
+  /* Additional shimmer animation */
+  animation: cardReveal 0.5s ease forwards, goldShimmer 3s ease-in-out 1s infinite;
+}
+
+@keyframes goldShimmer {
+  0%, 100% { box-shadow: 0 4px 20px rgba(200,150,12,0.2); }
+  50%       { box-shadow: 0 4px 30px rgba(200,150,12,0.45); }
+}
+
+.mem-card--gold .mem-card__badge { background: var(--gold); color: var(--ink); }
+
+/* ── Modals ────────────────────────────────────────────── */
+.mem-modal {
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  max-width: 480px;
+  width: calc(100% - 2rem);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: modalIn 0.25s ease;
+}
+
+.mem-modal::backdrop {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-inner { overflow: hidden; border-radius: 14px; }
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-header h2 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.modal-header--np    { background: #e2e8f0; color: #2d3748; }
+.modal-header--bronze{ background: #8b4513; color: #fff; }
+.modal-header--silver{ background: #2a3045; color: #cbd5e0; }
+.modal-header--gold  { background: linear-gradient(90deg, #1a1200, #2d1f00); color: var(--gold-light); }
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.7;
+  padding: 0.25rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: opacity 0.15s;
+}
+.modal-close:hover { opacity: 1; }
+
+.modal-benefits {
+  list-style: none;
+  padding: 1.25rem 1.5rem;
+  margin: 0;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.modal-benefits li {
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  line-height: 1.5;
+}
+
+.modal-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--parchment2);
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  border-top: 1px solid var(--border);
+  font-style: italic;
+}
+
+.modal-cta {
+  display: block;
+  width: 100%;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.03em;
+}
+.modal-cta:hover { background: var(--gold-light); }
+
+/* ── Thank You Page ────────────────────────────────────── */
+.thankyou-hero { padding: 3rem 1.25rem 2.5rem; }
+
+.thankyou-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.thankyou-main {
+  flex: 1;
+  padding: 2rem 1rem 3rem;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.thankyou-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 2rem 1.5rem;
+}
+
+.thankyou-card h2 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 0.75rem;
+}
+
+.thankyou-intro {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.summary-list {
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.summary-list div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-list div:last-child { border-bottom: none; }
+
+.summary-list dt {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: var(--parchment2);
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+}
+
+.summary-list dd {
+  font-size: 0.9rem;
+  color: var(--ink);
+  padding: 0.7rem 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.thankyou-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cta-back, .cta-dir {
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cta-back {
+  background: var(--parchment2);
+  color: var(--ink);
+  border: 2px solid var(--border);
+}
+.cta-back:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+.cta-dir {
+  background: var(--gold);
+  color: var(--ink);
+  border: 2px solid var(--gold);
+}
+.cta-dir:hover { background: var(--gold-light); }
+
+/* ── Responsive: larger screens ────────────────────────── */
+@media (min-width: 641px) {
+  .join-hero h1 { font-size: 2.5rem; }
+  .join-hero { padding: 3.5rem 2.5rem 3rem; text-align: left; }
+  .join-hero p { margin: 0; }
+
+  .join-main {
+    padding: 2.5rem 2rem 3.5rem;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .form-section { flex: 1; min-width: 0; }
+  .membership-cards { width: 280px; flex-shrink: 0; }
+  .card-grid { grid-template-columns: 1fr; }
+
+  .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 1024px) {
+  .join-main { padding: 3rem 3.5rem 4rem; gap: 2.5rem; }
+  .membership-cards { width: 300px; }
+}
