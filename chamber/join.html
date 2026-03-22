@@ -104,7 +104,7 @@
         <label class="form-field">
           <span class="field-label">Email Address <span class="required" aria-hidden="true">*</span></span>
           <input type="email" name="email" id="email"
-                 title="A valid email address"
+                 title="Enter a valid email address, e.g. name@example.com"
                  autocomplete="email"
                  placeholder="e.g. kwame@mybusiness.gh"
                  required>
@@ -113,7 +113,7 @@
         <label class="form-field">
           <span class="field-label">Mobile Phone <span class="required" aria-hidden="true">*</span></span>
           <input type="tel" name="phone" id="phone"
-                 title="Your mobile phone number"
+                 title="Enter your mobile phone number, e.g. +233 24 123 4567"
                  autocomplete="tel"
                  placeholder="+233 XX XXX XXXX"
                  required>
@@ -122,7 +122,7 @@
         <label class="form-field">
           <span class="field-label">Business / Organization Name <span class="required" aria-hidden="true">*</span></span>
           <input type="text" name="business" id="business"
-                 title="The name of your business or organization"
+                 title="Enter the full legal name of your business or organization"
                  autocomplete="organization"
                  placeholder="e.g. Mensah Enterprises Ltd."
                  required>
@@ -130,7 +130,7 @@
 
         <label class="form-field">
           <span class="field-label">Membership Level <span class="required" aria-hidden="true">*</span></span>
-          <select name="membership" id="membership" title="Select a membership level" required>
+          <select name="membership" id="membership" title="Select the membership level that best suits your organization" required>
             <option value="" disabled selected>— Select a level —</option>
             <option value="np">NP Membership (Non-Profit · Free)</option>
             <option value="bronze">Bronze Membership</option>
@@ -142,7 +142,7 @@
         <label class="form-field">
           <span class="field-label">Business Description</span>
           <textarea name="description" id="description"
-                    title="A brief description of your business or organization"
+                    title="Provide a brief description of your business, what you do and who you serve"
                     rows="4"
                     placeholder="Tell us about your business — what you do, who you serve, and why you want to join the Chamber."></textarea>
         </label>
@@ -151,7 +151,11 @@
         <input type="hidden" name="timestamp" id="timestamp">
 
         <div class="form-submit">
-          <input type="submit" value="Submit Application" class="submit-btn" aria-label="Submit your membership application">
+          <button type="submit" name="submit" class="submit-btn"
+                  title="Submit your membership application to the Accra Chamber of Commerce"
+                  aria-label="Submit your membership application">
+            Submit Application
+          </button>
         </div>
 
       </form>
