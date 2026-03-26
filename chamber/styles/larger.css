@@ -9,6 +9,12 @@
     flex-wrap: nowrap;
   }
 
+  /* hamburger still visible 641–710px — nav goes horizontal at 711px+ */
+}
+
+/* ── Horizontal nav kicks in at 711px to prevent logo overlap ── */
+@media (min-width: 711px) {
+
   #menu-btn { display: none; }
 
   nav,
@@ -41,6 +47,8 @@
     border-bottom: 2px solid var(--gold);
     border-radius: 0;
   }
+
+
 
   /* Directory hero banner */
   .hero {
