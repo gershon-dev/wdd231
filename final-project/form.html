@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | CineScope — Movie Explorer</title>
+  <meta name="description" content="Send feedback or a movie suggestion to the CineScope team.">
+  <meta name="author" content="Your Name">
+
+  <meta property="og:title"       content="Contact | CineScope">
+  <meta property="og:description" content="Send feedback or suggest a movie to the CineScope team.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://yourusername.github.io/wdd231/final/form.html">
+  <meta property="og:image"       content="https://yourusername.github.io/wdd231/final/images/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/nav.js" type="module" defer></script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="logo-wrap" aria-label="CineScope Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </a>
+    <button id="menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <h1 class="page-hero__title">Contact Us</h1>
+    <p class="page-hero__sub">Questions, feedback, or movie suggestions? We'd love to hear from you.</p>
+  </div>
+
+  <main id="main-content">
+    <div class="content-wrap content-wrap--narrow">
+
+      <form action="thankyou.html" method="get" class="contact-form" novalidate>
+
+        <div class="form-group">
+          <label for="name">Full Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="">— Select a topic —</option>
+            <option value="feedback">General Feedback</option>
+            <option value="suggestion">Movie Suggestion</option>
+            <option value="bug">Report a Bug</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" required placeholder="Your message…"></textarea>
+        </div>
+
+        <div class="form-group form-group--check">
+          <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+          <label for="subscribe">Subscribe to our monthly movie picks newsletter</label>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">Send Message →</button>
+
+      </form>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer__brand">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </div>
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="form.html">Contact</a>
+      <a href="attributions.html">Attributions</a>
+    </nav>
+    <p class="footer__copy">© <span class="footer-year"></span> CineScope</p>
+  </footer>
+
+</body>
+</html>

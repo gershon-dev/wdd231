@@ -1,0 +1,79 @@
+/* =====================================================
+   CineScope — larger.css  (711px+)
+   ===================================================== */
+
+@media (min-width: 711px) {
+
+  /* ── Header ── */
+  header { padding: 0.85rem 2.5rem; flex-wrap: nowrap; }
+  #menu-btn { display: none; }
+
+  nav, nav.open {
+    display: flex; flex-direction: row;
+    background: transparent; align-items: center;
+    gap: 0.25rem; position: static;
+    width: auto; box-shadow: none; border: none;
+  }
+
+  nav a {
+    padding: 0.4rem 0.85rem;
+    border-bottom: none; border-left: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+  }
+  nav a:hover, nav a.active {
+    background: rgba(245,166,35,0.08);
+    color: var(--amber);
+  }
+  nav a.active {
+    border-bottom: 2px solid var(--amber);
+    border-radius: 0;
+    border-left: none;
+  }
+
+  /* ── Hero ── */
+  .hero { padding: 7rem 3rem 7rem; }
+  .hero__title { font-size: 5.5rem; }
+  .hero__sub   { font-size: 1.15rem; }
+
+  /* ── Movie Grid — 3 cols ── */
+  .movie-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+  /* ── Controls ── */
+  .controls-bar { flex-direction: row; align-items: center; justify-content: space-between; }
+
+  /* ── Footer ── */
+  footer { flex-direction: row; flex-wrap: wrap; justify-content: space-between; text-align: left; padding: 2.5rem 3rem; }
+
+  /* ── Page Hero ── */
+  .page-hero { padding: 4rem 3rem; }
+  .page-hero__title { font-size: 3.5rem; }
+}
+
+/* =====================================================
+   1024px and above
+   ===================================================== */
+
+@media (min-width: 1024px) {
+
+  header { padding: 1rem 3.5rem; }
+
+  /* ── Hero ── */
+  .hero { padding: 9rem 4rem 9rem; }
+  .hero__title { font-size: 7rem; }
+
+  /* ── Movie Grid — 4 cols ── */
+  .movie-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+  /* ── Section padding ── */
+  .section { padding: 4rem 2rem 1rem; }
+
+  nav a { font-size: 1rem; }
+
+  /* ── Modal wider ── */
+  .modal__panel { max-width: 760px; }
+  .modal-body   { padding: 2rem; }
+  .modal-title  { font-size: 2.2rem; }
+}

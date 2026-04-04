@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Home | CineScope — Movie Explorer</title>
+  <meta name="description" content="CineScope helps you discover popular and top-rated movies. Browse, explore details, and save your favourites.">
+  <meta name="author" content="Your Name">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="CineScope — Movie Explorer">
+  <meta property="og:description" content="Discover popular and top-rated movies with CineScope.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://yourusername.github.io/wdd231/final/index.html">
+  <meta property="og:image"       content="https://yourusername.github.io/wdd231/final/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo-wrap" aria-label="CineScope Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </a>
+
+    <button id="menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Discover · Explore · Save</p>
+      <h1 id="hero-heading" class="hero__title">Your Cinema<br><span>Starts Here</span></h1>
+      <p class="hero__sub">Browse thousands of films. Read details. Save your favourites. CineScope puts the world of movies at your fingertips.</p>
+      <div class="hero__actions">
+        <a href="movies.html" class="btn btn--primary">Browse Movies</a>
+        <a href="favourites.html" class="btn btn--ghost">My Favourites</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main id="main-content">
+
+    <!-- Trending Now -->
+    <section class="section" aria-labelledby="trending-heading">
+      <div class="section__header">
+        <h2 id="trending-heading" class="section__title">Trending Now</h2>
+        <a href="movies.html" class="section__link">View all →</a>
+      </div>
+      <div id="trending-grid" class="movie-grid" aria-live="polite">
+        <p class="loading-msg" role="status">Loading movies…</p>
+      </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner" aria-label="Site statistics">
+      <div class="stat">
+        <span class="stat__number" id="stat-movies">—</span>
+        <span class="stat__label">Movies in Database</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number" id="stat-favs">0</span>
+        <span class="stat__label">Your Favourites</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">4K+</span>
+        <span class="stat__label">Hours of Cinema</span>
+      </div>
+    </section>
+
+    <!-- Top Rated -->
+    <section class="section" aria-labelledby="toprated-heading">
+      <div class="section__header">
+        <h2 id="toprated-heading" class="section__title">Top Rated</h2>
+        <a href="movies.html" class="section__link">View all →</a>
+      </div>
+      <div id="toprated-grid" class="movie-grid" aria-live="polite">
+        <p class="loading-msg" role="status">Loading movies…</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__brand">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </div>
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="form.html">Contact</a>
+      <a href="attributions.html">Attributions</a>
+    </nav>
+    <p class="footer__credit">
+      Data provided by <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a> ·
+      Built for WDD 231 ·
+      <a href="https://youtube.com" target="_blank" rel="noopener">▶ Watch Demo</a>
+    </p>
+    <p class="footer__copy">© <span id="current-year"></span> CineScope</p>
+  </footer>
+
+</body>
+</html>
