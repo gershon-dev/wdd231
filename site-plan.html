@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site plan for Chop Bar Chronicles — a street food discovery platform celebrating African cuisine. Includes site name, purpose, scenarios, color scheme, typography, and wireframes.">
+  <title>Site Plan – Chop Bar Chronicles</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --clay:       #C4663A;
+      --ember:      #E8935A;
+      --cream:      #FAF5EC;
+      --parchment:  #EDE3D2;
+      --charcoal:   #2B2118;
+      --bark:       #5C3D2E;
+      --smoke:      #7D6A5B;
+      --white:      #FFFFFF;
+
+      --font-display: 'DM Serif Display', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body:    'Lora', Georgia, serif;
+
+      --max-w: 860px;
+      --radius: 4px;
+      --gap: 2.5rem;
+    }
+
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--charcoal);
+      color: var(--cream);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 6px solid var(--clay);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(196,102,58,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-label {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    header h1 em {
+      color: var(--ember);
+      font-style: italic;
+    }
+
+    .header-sub {
+      font-family: var(--font-body);
+      font-style: italic;
+      color: var(--smoke);
+      font-size: 1rem;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background-color: var(--bark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      list-style: none;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.75rem 1.1rem;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--white);
+      background-color: var(--clay);
+    }
+
+    /* ── MAIN ── */
+    main {
+      padding: 3rem 0 5rem;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: var(--gap);
+      scroll-margin-top: 3.5rem;
+    }
+
+    .section-inner {
+      background: var(--white);
+      border-radius: var(--radius);
+      border-left: 5px solid var(--clay);
+      padding: 2rem 2.2rem;
+      box-shadow: 0 2px 16px rgba(43,33,24,0.06);
+    }
+
+    .section-number {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 0.4rem;
+    }
+
+    .section h2 {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section p {
+      color: var(--bark);
+      margin-bottom: 0.9rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: var(--parchment);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      margin-top: 1rem;
+      font-style: italic;
+      color: var(--bark);
+      border-left: 3px solid var(--ember);
+    }
+
+    /* ── SCENARIOS ── */
+    .scenarios-list {
+      list-style: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .scenarios-list li {
+      background: var(--parchment);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.2rem 0.9rem 3rem;
+      position: relative;
+      color: var(--bark);
+      font-style: italic;
+    }
+
+    .scenarios-list li::before {
+      content: '?';
+      position: absolute;
+      left: 1rem;
+      top: 0.85rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--clay);
+      font-style: normal;
+    }
+
+    /* ── COLOR PALETTE ── */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .swatch {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(43,33,24,0.1);
+    }
+
+    .swatch-color {
+      height: 80px;
+    }
+
+    .swatch-info {
+      padding: 0.6rem 0.8rem;
+      background: var(--white);
+    }
+
+    .swatch-name {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--charcoal);
+    }
+
+    .swatch-hex {
+      font-size: 0.7rem;
+      color: var(--smoke);
+      font-family: monospace;
+    }
+
+    .swatch-use {
+      font-size: 0.72rem;
+      color: var(--bark);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .type-samples {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .type-sample {
+      background: var(--parchment);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+    }
+
+    .type-label {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--smoke);
+      margin-bottom: 0.5rem;
+    }
+
+    .type-demo-display {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .type-demo-heading {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    .type-demo-body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--bark);
+      line-height: 1.75;
+    }
+
+    .type-usage {
+      font-size: 0.8rem;
+      color: var(--smoke);
+      margin-top: 0.4rem;
+      font-family: var(--font-heading);
+    }
+
+    /* ── WIREFRAMES ── */
+    .wireframes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .wireframes { grid-template-columns: 1fr; }
+    }
+
+    .wireframe-card {
+      background: var(--parchment);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+
+    .wireframe-title {
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--smoke);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+
+    /* SVG wireframes are inline below */
+    .wireframe-card svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--charcoal);
+      color: var(--smoke);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    footer span { color: var(--ember); }
+
+    /* ── SWATCH COLORS ── */
+    .sw-clay     { background: #C4663A; }
+    .sw-ember    { background: #E8935A; }
+    .sw-cream    { background: #FAF5EC; }
+    .sw-parchment{ background: #EDE3D2; }
+    .sw-charcoal { background: #2B2118; }
+    .sw-bark     { background: #5C3D2E; border: 1px solid #EDE3D2; }
+
+    /* ── TYPE DEMO OVERRIDES ── */
+    .type-demo-display--italic {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--clay);
+      line-height: 1.2;
+      font-style: italic;
+    }
+    .type-demo-body--quote {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--smoke);
+      margin-top: 0.5rem;
+      font-style: italic;
+      line-height: 1.75;
+    }
+    .highlight--top { margin-top: 1.2rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .section-inner { padding: 1.4rem 1.2rem; }
+      header { padding: 2.5rem 1rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header>
+    <p class="header-label">WDD 131 &nbsp;·&nbsp; Web Frontend Development I &nbsp;·&nbsp; Site Plan</p>
+    <h1>Chop Bar <em>Chronicles</em></h1>
+    <p class="header-sub">A web project site plan document &mdash; living blueprint for design &amp; development</p>
+  </header>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav aria-label="Site plan sections">
+    <ul>
+      <li><a href="#site-name">Site Name</a></li>
+      <li><a href="#purpose">Purpose</a></li>
+      <li><a href="#scenarios">Scenarios</a></li>
+      <li><a href="#colors">Colors</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#wireframe">Wireframe</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <main>
+    <div class="container">
+
+      <!-- 1 · SITE NAME -->
+      <section class="section" id="site-name">
+        <div class="section-inner">
+          <p class="section-number">Section 01</p>
+          <h2>Site Name</h2>
+          <p>
+            <strong>Chop Bar Chronicles</strong> is the chosen name for this project. In West African English, a <em>chop bar</em> is a casual, beloved roadside eatery — the heartbeat of neighbourhood food culture across Ghana, Nigeria, and beyond. <em>Chronicles</em> evokes storytelling, discovery, and an ongoing journey.
+          </p>
+          <p>
+            Together, the name signals an authentic, story-driven platform dedicated to celebrating African street food and local dining. It is culturally grounded, easy to remember, and distinct from generic food-review sites.
+          </p>
+          <div class="highlight">
+            Proposed domain: <strong>chopbarchronicles.com</strong> &nbsp;·&nbsp; The name resonates immediately with the target audience while remaining approachable and curious-sounding to newcomers discovering African cuisine for the first time.
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 · PURPOSE -->
+      <section class="section" id="purpose">
+        <div class="section-inner">
+          <p class="section-number">Section 02</p>
+          <h2>Site Purpose</h2>
+          <p>
+            Chop Bar Chronicles is a discovery and storytelling platform dedicated to African street food culture. The site profiles iconic dishes, local vendors, regional food traditions, and must-visit chop bars across the African continent.
+          </p>
+          <p>
+            Visitors can browse featured dishes with descriptions and cultural context, explore a curated vendor spotlight section, and submit their own local recommendations through a contact/recommendation form. The site also provides a newsletter sign-up for weekly food stories.
+          </p>
+          <div class="highlight">
+            Core value proposition: authentic, community-contributed food discovery — bridging curious food travellers, diaspora communities, and local enthusiasts through the shared language of street food.
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 · SCENARIOS -->
+      <section class="section" id="scenarios">
+        <div class="section-inner">
+          <p class="section-number">Section 03</p>
+          <h2>Scenarios</h2>
+          <p>The following scenarios represent questions real visitors from the target audience might ask when arriving at the site. They guide content decisions and information architecture.</p>
+          <ul class="scenarios-list">
+            <li>I'm travelling to Accra next month — where can I find the best kelewele and waakye spots that locals actually go to?</li>
+            <li>I grew up eating suya in Lagos and now live in London. Are there any vendor stories or recipes that will remind me of home?</li>
+            <li>I want to recommend my grandmother's chop bar in Kumasi — how do I submit it to be featured on the site?</li>
+            <li>What are the most iconic street foods in East Africa, and how do they differ from West African dishes?</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4 · COLOR SCHEME -->
+      <section class="section" id="colors">
+        <div class="section-inner">
+          <p class="section-number">Section 04</p>
+          <h2>Color Scheme</h2>
+          <p>
+            The palette draws from the warm, earthy tones of clay pottery, open-fire cooking, dried spices, and sun-bleached parchment — rooted in the visual texture of West African markets and chop bar signage.
+          </p>
+
+          <div class="palette">
+
+            <div class="swatch">
+              <div class="swatch-color sw-clay"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Clay</div>
+                <div class="swatch-hex">#C4663A</div>
+                <div class="swatch-use">Primary accent, borders, CTA buttons, links</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="swatch-color sw-ember"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Ember</div>
+                <div class="swatch-hex">#E8935A</div>
+                <div class="swatch-use">Hover states, highlights, nav accents, labels</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="swatch-color sw-cream"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Cream</div>
+                <div class="swatch-hex">#FAF5EC</div>
+                <div class="swatch-use">Page background, main surface</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="swatch-color sw-parchment"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Parchment</div>
+                <div class="swatch-hex">#EDE3D2</div>
+                <div class="swatch-use">Card backgrounds, pull-quote boxes, section fills</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="swatch-color sw-charcoal"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Charcoal</div>
+                <div class="swatch-hex">#2B2118</div>
+                <div class="swatch-use">Header/footer background, headings, primary text</div>
+              </div>
+            </div>
+
+            <div class="swatch">
+              <div class="swatch-color sw-bark"></div>
+              <div class="swatch-info">
+                <div class="swatch-name">Bark</div>
+                <div class="swatch-hex">#5C3D2E</div>
+                <div class="swatch-use">Body text, secondary headings, captions</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 · TYPOGRAPHY -->
+      <section class="section" id="typography">
+        <div class="section-inner">
+          <p class="section-number">Section 05</p>
+          <h2>Typography</h2>
+          <p>Three complementary typefaces are selected to create an editorial, warm, and culturally rich voice across the site.</p>
+
+          <div class="type-samples">
+
+            <div class="type-sample">
+              <div class="type-label">Font 1 &nbsp;·&nbsp; DM Serif Display &nbsp;·&nbsp; Google Fonts</div>
+              <div class="type-demo-display">Chop Bar Chronicles</div>
+              <div class="type-demo-display--italic">Taste the Story</div>
+              <div class="type-usage">Used for: Site name/logo, hero headings, section titles, pull quotes. The italic variant adds elegance and warmth.</div>
+            </div>
+
+            <div class="type-sample">
+              <div class="type-label">Font 2 &nbsp;·&nbsp; Syne &nbsp;·&nbsp; Google Fonts</div>
+              <div class="type-demo-heading">Featured Vendor &nbsp;·&nbsp; Street Food Guide &nbsp;·&nbsp; Submit a Spot</div>
+              <div class="type-usage">Used for: Navigation links, section labels, buttons, tag labels, UI elements. Bold weight (800) for maximum legibility at small sizes.</div>
+            </div>
+
+            <div class="type-sample">
+              <div class="type-label">Font 3 &nbsp;·&nbsp; Lora &nbsp;·&nbsp; Google Fonts</div>
+              <div class="type-demo-body">
+                Waakye is more than a meal — it is a ritual. Found on street corners from Accra to Tamale, the dish of rice and beans slow-cooked with dried millet stalks carries centuries of culinary tradition in every steaming spoonful.
+              </div>
+              <div class="type-demo-body--quote">"The best chop bar in Osu doesn't have a sign. You just follow the smoke." — Community submission</div>
+              <div class="type-usage">Used for: All body copy, article text, vendor descriptions, pull quotes in italic. Warm and highly readable at body sizes.</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 · WIREFRAME -->
+      <section class="section" id="wireframe">
+        <div class="section-inner">
+          <p class="section-number">Section 06</p>
+          <h2>Wireframe</h2>
+          <p>
+            Below are wireframe diagrams for the home page in two viewport sizes: <strong>mobile</strong> (narrow, single-column) and <strong>desktop/tablet</strong> (wider, multi-column). Grey blocks represent image/media areas; lighter blocks represent text content regions.
+          </p>
+
+          <div class="wireframes">
+
+            <!-- MOBILE WIREFRAME -->
+            <div class="wireframe-card">
+              <p class="wireframe-title">📱 Mobile View (&lt; 600px)</p>
+              <svg viewBox="0 0 200 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="wf-mobile-title">
+                <title id="wf-mobile-title">Mobile wireframe for Chop Bar Chronicles home page</title>
+                <!-- Phone frame -->
+                <rect x="5" y="5" width="190" height="430" rx="12" fill="#EDE3D2" stroke="#5C3D2E" stroke-width="1.5"/>
+
+                <!-- NAV BAR -->
+                <rect x="5" y="5" width="190" height="28" rx="12" fill="#2B2118"/>
+                <rect x="5" y="17" width="190" height="16" fill="#2B2118"/>
+                <rect x="15" y="13" width="50" height="8" rx="2" fill="#E8935A"/>
+                <rect x="140" y="13" width="12" height="3" rx="1" fill="#7D6A5B"/>
+                <rect x="140" y="18" width="12" height="3" rx="1" fill="#7D6A5B"/>
+                <rect x="140" y="23" width="12" height="3" rx="1" fill="#7D6A5B"/>
+
+                <!-- HERO IMAGE -->
+                <rect x="15" y="40" width="170" height="85" rx="4" fill="#C4663A" opacity="0.35"/>
+                <rect x="15" y="40" width="170" height="85" rx="4" fill="none" stroke="#C4663A" stroke-width="1"/>
+                <!-- image icon -->
+                <rect x="80" y="67" width="40" height="30" rx="3" fill="#C4663A" opacity="0.5"/>
+                <circle cx="88" cy="74" r="4" fill="#E8935A" opacity="0.7"/>
+                <polygon points="80,97 100,77 110,87 120,74 130,97" fill="#C4663A" opacity="0.6"/>
+                <!-- hero text overlay -->
+                <rect x="20" y="108" width="100" height="8" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="20" y="119" width="70" height="5" rx="2" fill="#2B2118" opacity="0.3"/>
+
+                <!-- INTRO TEXT -->
+                <rect x="15" y="136" width="170" height="7" rx="2" fill="#5C3D2E" opacity="0.4"/>
+                <rect x="15" y="147" width="155" height="7" rx="2" fill="#5C3D2E" opacity="0.4"/>
+                <rect x="15" y="158" width="130" height="7" rx="2" fill="#5C3D2E" opacity="0.4"/>
+
+                <!-- SECTION LABEL -->
+                <rect x="15" y="178" width="80" height="6" rx="2" fill="#C4663A" opacity="0.7"/>
+
+                <!-- CARD 1 -->
+                <rect x="15" y="190" width="170" height="70" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="15" y="190" width="60" height="70" rx="4" fill="#C4663A" opacity="0.25"/>
+                <rect x="84" y="198" width="90" height="6" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="84" y="208" width="75" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="217" width="80" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="226" width="60" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="244" width="45" height="10" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- CARD 2 -->
+                <rect x="15" y="270" width="170" height="70" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="15" y="270" width="60" height="70" rx="4" fill="#E8935A" opacity="0.25"/>
+                <rect x="84" y="278" width="90" height="6" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="84" y="288" width="75" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="297" width="80" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="306" width="60" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="84" y="322" width="45" height="10" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- NEWSLETTER -->
+                <rect x="15" y="352" width="170" height="55" rx="4" fill="#2B2118"/>
+                <rect x="30" y="360" width="80" height="7" rx="2" fill="#E8935A" opacity="0.8"/>
+                <rect x="25" y="373" width="150" height="12" rx="3" fill="#FAF5EC" opacity="0.15"/>
+                <rect x="25" y="389" width="70" height="11" rx="3" fill="#C4663A"/>
+
+                <!-- FOOTER -->
+                <rect x="5" y="415" width="190" height="20" rx="0" fill="#2B2118"/>
+                <rect x="5" y="423" width="190" height="12" rx="0" fill="#2B2118"/>
+                <rect x="55" y="420" width="90" height="5" rx="2" fill="#7D6A5B" opacity="0.6"/>
+              </svg>
+            </div>
+
+            <!-- DESKTOP WIREFRAME -->
+            <div class="wireframe-card">
+              <p class="wireframe-title">🖥 Desktop / Tablet View (&gt; 768px)</p>
+              <svg viewBox="0 0 360 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="wf-desktop-title">
+                <title id="wf-desktop-title">Desktop wireframe for Chop Bar Chronicles home page</title>
+                <!-- Browser frame -->
+                <rect x="2" y="2" width="356" height="436" rx="6" fill="#EDE3D2" stroke="#5C3D2E" stroke-width="1.5"/>
+
+                <!-- TOPBAR / NAV -->
+                <rect x="2" y="2" width="356" height="30" rx="6" fill="#2B2118"/>
+                <rect x="2" y="16" width="356" height="16" fill="#2B2118"/>
+                <rect x="12" y="12" width="60" height="9" rx="2" fill="#E8935A"/>
+                <!-- nav links right -->
+                <rect x="200" y="13" width="28" height="6" rx="2" fill="#7D6A5B" opacity="0.7"/>
+                <rect x="234" y="13" width="28" height="6" rx="2" fill="#7D6A5B" opacity="0.7"/>
+                <rect x="268" y="13" width="28" height="6" rx="2" fill="#7D6A5B" opacity="0.7"/>
+                <rect x="302" y="11" width="46" height="10" rx="3" fill="#C4663A"/>
+
+                <!-- HERO (full-width) -->
+                <rect x="2" y="32" width="356" height="110" fill="#C4663A" opacity="0.2"/>
+                <rect x="2" y="32" width="356" height="110" fill="none" stroke="#C4663A" stroke-width="0.5"/>
+                <!-- image rep -->
+                <rect x="180" y="32" width="178" height="110" fill="#C4663A" opacity="0.25"/>
+                <rect x="200" y="62" width="60" height="45" rx="3" fill="#C4663A" opacity="0.4"/>
+                <circle cx="215" cy="74" r="7" fill="#E8935A" opacity="0.6"/>
+                <polygon points="200,107 228,82 244,92 258,78 278,107" fill="#C4663A" opacity="0.5"/>
+                <!-- hero text left -->
+                <rect x="14" y="55" width="145" height="14" rx="2" fill="#2B2118" opacity="0.55"/>
+                <rect x="14" y="75" width="120" height="9" rx="2" fill="#2B2118" opacity="0.35"/>
+                <rect x="14" y="90" width="100" height="9" rx="2" fill="#2B2118" opacity="0.35"/>
+                <rect x="14" y="108" width="60" height="14" rx="3" fill="#C4663A" opacity="0.85"/>
+
+                <!-- INTRO TEXT ROW -->
+                <rect x="14" y="155" width="332" height="7" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="14" y="166" width="290" height="7" rx="2" fill="#5C3D2E" opacity="0.35"/>
+
+                <!-- SECTION LABEL -->
+                <rect x="14" y="185" width="100" height="7" rx="2" fill="#C4663A" opacity="0.7"/>
+
+                <!-- 3-COLUMN CARDS -->
+                <!-- Card 1 -->
+                <rect x="14" y="198" width="104" height="105" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="14" y="198" width="104" height="45" rx="4" fill="#C4663A" opacity="0.28"/>
+                <rect x="14" y="230" width="104" height="13" fill="#C4663A" opacity="0.28"/>
+                <rect x="20" y="250" width="85" height="6" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="20" y="260" width="70" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="20" y="269" width="60" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="20" y="283" width="40" height="10" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- Card 2 -->
+                <rect x="128" y="198" width="104" height="105" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="128" y="198" width="104" height="45" rx="4" fill="#E8935A" opacity="0.28"/>
+                <rect x="128" y="230" width="104" height="13" fill="#E8935A" opacity="0.28"/>
+                <rect x="134" y="250" width="85" height="6" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="134" y="260" width="70" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="134" y="269" width="60" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="134" y="283" width="40" height="10" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- Card 3 -->
+                <rect x="242" y="198" width="104" height="105" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="242" y="198" width="104" height="45" rx="4" fill="#5C3D2E" opacity="0.28"/>
+                <rect x="242" y="230" width="104" height="13" fill="#5C3D2E" opacity="0.28"/>
+                <rect x="248" y="250" width="85" height="6" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="248" y="260" width="70" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="248" y="269" width="60" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="248" y="283" width="40" height="10" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- SECTION LABEL 2 -->
+                <rect x="14" y="318" width="110" height="7" rx="2" fill="#C4663A" opacity="0.7"/>
+
+                <!-- 2-COL LAYOUT (vendor + sidebar) -->
+                <!-- Main vendor block -->
+                <rect x="14" y="332" width="220" height="70" rx="4" fill="#FFFFFF" stroke="#EDE3D2" stroke-width="1"/>
+                <rect x="14" y="332" width="80" height="70" rx="4" fill="#C4663A" opacity="0.22"/>
+                <rect x="102" y="340" width="120" height="7" rx="2" fill="#2B2118" opacity="0.5"/>
+                <rect x="102" y="352" width="100" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="102" y="361" width="110" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="102" y="370" width="90" height="5" rx="2" fill="#5C3D2E" opacity="0.35"/>
+                <rect x="102" y="385" width="50" height="11" rx="3" fill="#C4663A" opacity="0.7"/>
+
+                <!-- Sidebar newsletter -->
+                <rect x="244" y="332" width="102" height="70" rx="4" fill="#2B2118"/>
+                <rect x="252" y="340" width="80" height="7" rx="2" fill="#E8935A" opacity="0.8"/>
+                <rect x="252" y="352" width="80" height="5" rx="2" fill="#FAF5EC" opacity="0.2"/>
+                <rect x="252" y="361" width="80" height="5" rx="2" fill="#FAF5EC" opacity="0.2"/>
+                <rect x="248" y="372" width="90" height="12" rx="3" fill="#FAF5EC" opacity="0.15"/>
+                <rect x="248" y="388" width="55" height="10" rx="3" fill="#C4663A"/>
+
+                <!-- FOOTER -->
+                <rect x="2" y="412" width="356" height="26" rx="0" fill="#2B2118"/>
+                <rect x="2" y="424" width="356" height="14" rx="0" fill="#2B2118"/>
+                <rect x="100" y="420" width="160" height="5" rx="2" fill="#7D6A5B" opacity="0.5"/>
+                <rect x="120" y="429" width="120" height="5" rx="2" fill="#7D6A5B" opacity="0.3"/>
+              </svg>
+            </div>
+
+          </div><!-- /.wireframes -->
+
+          <div class="highlight highlight--top">
+            <strong>Layout notes:</strong> Mobile uses a single-column stacked layout. Desktop shifts to a 3-column card grid for featured dishes, with a 2-column layout (main content + sidebar) for the vendor spotlight section. The hero is full-width on both viewports but splits into a text-left / image-right arrangement on desktop.
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>Chop Bar Chronicles &nbsp;·&nbsp; Site Plan Document &nbsp;&copy; 2026 &nbsp;·&nbsp; WDD 131 &nbsp;·&nbsp; Built with <span>♥</span> and HTML</p>
+  </footer>
+
+</body>
+</html>
