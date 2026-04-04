@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | CineScope — Movie Explorer</title>
+  <meta name="description" content="Thank you for contacting CineScope. We received your message.">
+  <meta name="author" content="Your Name">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/nav.js" type="module" defer></script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="logo-wrap" aria-label="CineScope Home">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </a>
+    <button id="menu-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="content-wrap content-wrap--narrow">
+
+      <div class="thankyou-wrap">
+        <div class="thankyou-icon" aria-hidden="true">✓</div>
+        <h1 class="thankyou-title">Message Sent!</h1>
+        <p class="thankyou-sub">Thanks for reaching out. Here's a summary of what you submitted:</p>
+
+        <dl class="submission-list" id="submission-list">
+          <!-- Filled by JS -->
+        </dl>
+
+        <a href="index.html" class="btn btn--primary">← Back to Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer__brand">
+      <span class="logo-icon" aria-hidden="true">◈</span>
+      <span class="logo-text">Cine<span>Scope</span></span>
+    </div>
+    <nav class="footer__links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="favourites.html">Favourites</a>
+      <a href="form.html">Contact</a>
+    </nav>
+    <p class="footer__copy">© <span class="footer-year"></span> CineScope</p>
+  </footer>
+
+  <script>
+    // Read URL search params and display submitted form data
+    const params = new URLSearchParams(window.location.search);
+    const list   = document.getElementById('submission-list');
+
+    const fields = [
+      { key: 'name',      label: 'Full Name' },
+      { key: 'email',     label: 'Email Address' },
+      { key: 'subject',   label: 'Subject' },
+      { key: 'message',   label: 'Message' },
+      { key: 'subscribe', label: 'Newsletter' },
+    ];
+
+    const subjectLabels = {
+      feedback:   'General Feedback',
+      suggestion: 'Movie Suggestion',
+      bug:        'Report a Bug',
+      other:      'Other',
+    };
+
+    let hasData = false;
+
+    fields.forEach(({ key, label }) => {
+      let value = params.get(key);
+      if (!value) return;
+
+      // Make subject human-readable
+      if (key === 'subject') value = subjectLabels[value] || value;
+      if (key === 'subscribe') value = value === 'yes' ? 'Yes, subscribed' : 'No';
+
+      hasData = true;
+      const row = document.createElement('div');
+      row.className = 'submission-row';
+      row.innerHTML = `<dt>${label}</dt><dd>${value}</dd>`;
+      list.appendChild(row);
+    });
+
+    if (!hasData) {
+      list.innerHTML = '<p style="color:var(--muted);font-family:var(--font-mono);font-size:0.85rem;">No submission data found.</p>';
+    }
+  </script>
+
+</body>
+</html>

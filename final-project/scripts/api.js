@@ -1,7 +1,7 @@
 // api.js — all TMDB API calls
 
 // ⚠️ Replace this with your own free key from https://www.themoviedb.org
-const API_KEY  = 'YOUR_TMDB_API_KEY';
+const API_KEY  = '5cb63eff632be79dc852cb2f4ad81c5e';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 /**

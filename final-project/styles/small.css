@@ -10,7 +10,7 @@ button, input, select, textarea {
   font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0;
 }
 button { cursor: pointer; }
-[hidden] { display: none; }
+[hidden] { display: none !important; }
 
 /* ── Variables ─────────────────────────────────────── */
 :root {
@@ -23,7 +23,7 @@ button { cursor: pointer; }
   --amber-light: #ffc85a;
   --amber-dark:  #b87a10;
   --white:       #f0eee8;
-  --muted:       #7a7890;
+  --muted:       #b0aec8;
   --red:         #e05252;
   --green:       #52c97e;
 
@@ -58,7 +58,7 @@ h1 { font-size: 2.4rem; }
 h2 { font-size: 1.8rem; }
 h3 { font-size: 1.2rem; }
 
-a { color: var(--amber); text-decoration: none; transition: color var(--transition); }
+a { color: var(--amber); text-decoration: underline; text-underline-offset: 3px; transition: color var(--transition); }
 a:hover { color: var(--amber-light); }
 
 img { max-width: 100%; display: block; }
@@ -432,9 +432,13 @@ nav a.active { border-left: 3px solid var(--amber); }
 
 /* ── Modal ──────────────────────────────────────────── */
 .modal {
-  position: fixed; inset: 0; z-index: 500;
+  position: fixed; inset: 0; z-index: 600;
   display: flex; align-items: center; justify-content: center;
   padding: 1rem;
+}
+/* When modal is hidden, ensure it's fully removed from interaction */
+.modal[hidden] {
+  display: none !important;
 }
 
 .modal__backdrop {
@@ -620,3 +624,16 @@ footer {
 .content-wrap p  { color: var(--muted); margin-bottom: 1.5rem; }
 .content-wrap ul { color: var(--muted); padding-left: 1.5rem; line-height: 2; }
 .content-wrap ul strong { color: var(--white); }
+
+/* Remove underline from decorative/nav links */
+nav a,
+.logo-wrap,
+.footer__links a,
+.footer__credit a,
+.section__link,
+.btn,
+.skip-link,
+.movie-card__title,
+.hero__actions a {
+  text-decoration: none;
+}
